@@ -116,4 +116,28 @@ and in postmen at POST  localhost:8181/books and with body>raw>json
 
 now develop client
 
+create app
+
+install react-router-dom
+create pages and Books, Add, Update and navigate with url in App.js file
+
+then to fetch all data in Books install axios
+
+ const [books, setBooks] = useState([])
+    useEffect(()=>{
+        const fetchAllBooks = async ()=>{
+            try{
+                const res = await axios.get("http://localhost:8181/books")
+                console.log(res)
+            }
+            catch(err){
+                console.log(err)
+            }
+        }
+    })
+
+here there will be an error backend server will no allow an application to use backend api
+so install npm i cors library in backend and import and use with app.use(cors()) in index.js
+
+
 
